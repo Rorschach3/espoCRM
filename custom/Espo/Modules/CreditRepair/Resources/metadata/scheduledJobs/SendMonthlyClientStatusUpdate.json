@@ -1,0 +1,8 @@
+{
+    "SendMonthlyClientStatusUpdate": {
+        "name": "Send Monthly Client Status Update",
+        "scheduling": "0 8 1 * *",
+        "job": "Espo\\Modules\\CreditRepair\\Jobs\\SendMonthlyClientStatusUpdate",
+        "isSystem": false
+    }
+}

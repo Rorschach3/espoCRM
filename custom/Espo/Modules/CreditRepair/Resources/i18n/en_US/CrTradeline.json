@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "name": "Name",
+        "creditorName": "Creditor Name",
+        "accountNumber": "Account Number",
+        "accountType": "Account Type",
+        "bureau": "Bureau(s)",
+        "balance": "Balance",
+        "balanceConverted": "Balance (Converted)",
+        "creditLimit": "Credit Limit",
+        "creditLimitConverted": "Credit Limit (Converted)",
+        "openedDate": "Opened Date",
+        "reportedDate": "Last Reported",
+        "status": "Dispute Status",
+        "paymentStatus": "Payment Status",
+        "remarks": "Remarks",
+        "crClient": "Client",
+        "assignedUser": "Assigned To",
+        "teams": "Teams",
+        "disputeLetters": "Dispute Letters"
+    },
+    "links": {
+        "crClient": "Client",
+        "disputeLetters": "Dispute Letters"
+    },
+    "options": {
+        "accountType": {
+            "Credit Card": "Credit Card",
+            "Auto Loan": "Auto Loan",
+            "Mortgage": "Mortgage",
+            "Student Loan": "Student Loan",
+            "Medical": "Medical",
+            "Collection": "Collection",
+            "Charge-Off": "Charge-Off",
+            "Personal Loan": "Personal Loan",
+            "Other": "Other"
+        },
+        "bureau": {
+            "Equifax": "Equifax",
+            "Experian": "Experian",
+            "TransUnion": "TransUnion"
+        },
+        "status": {
+            "Open": "Open",
+            "Closed": "Closed",
+            "In Dispute": "In Dispute",
+            "Removed": "Removed",
+            "Verified": "Verified"
+        },
+        "paymentStatus": {
+            "Current": "Current",
+            "30 Days Late": "30 Days Late",
+            "60 Days Late": "60 Days Late",
+            "90 Days Late": "90 Days Late",
+            "120+ Days Late": "120+ Days Late",
+            "Charged Off": "Charged Off",
+            "Collection": "Collection"
+        }
+    },
+    "labels": {
+        "Create CrTradeline": "Add Tradeline"
+    },
+    "presetFilters": {
+        "inDispute": "In Dispute",
+        "removed": "Removed"
+    }
+}

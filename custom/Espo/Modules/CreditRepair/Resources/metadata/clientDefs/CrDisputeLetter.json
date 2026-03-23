@@ -1,0 +1,23 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-envelope-open-text",
+    "additionalLayouts": {
+        "listForCrClient": {
+            "type": "listSmall"
+        },
+        "listForCrTradeline": {
+            "type": "listSmall"
+        },
+        "detailPortal": {
+            "type": "detail"
+        },
+        "listPortal": {
+            "type": "list"
+        }
+    },
+    "filterList": [
+        {"name": "sent", "style": "primary"},
+        {"name": "resolved", "style": "success"},
+        {"name": "draft", "style": "info"}
+    ]
+}

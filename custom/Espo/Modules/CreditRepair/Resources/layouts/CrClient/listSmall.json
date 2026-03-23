@@ -1,0 +1,6 @@
+[
+    {"name": "name", "link": true},
+    {"name": "status", "width": 12},
+    {"name": "enrollmentDate", "width": 14},
+    {"name": "outstandingBalance", "width": 15}
+]

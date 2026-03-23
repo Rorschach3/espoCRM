@@ -1,0 +1,15 @@
+{
+    "entity": true,
+    "layouts": true,
+    "tab": false,
+    "acl": true,
+    "aclPortal": true,
+    "aclPortalLevelList": ["all", "account", "own", "no"],
+    "module": "CreditRepair",
+    "customizable": true,
+    "stream": false,
+    "importable": true,
+    "notifications": false,
+    "object": true,
+    "statusField": "status"
+}

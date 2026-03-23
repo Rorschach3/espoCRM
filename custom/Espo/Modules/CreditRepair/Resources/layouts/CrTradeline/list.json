@@ -1,0 +1,9 @@
+[
+    {"name": "creditorName", "link": true},
+    {"name": "accountType", "width": 14},
+    {"name": "bureau", "width": 20},
+    {"name": "status", "width": 12},
+    {"name": "balance", "width": 14},
+    {"name": "paymentStatus", "width": 16},
+    {"name": "crClient", "width": 16}
+]

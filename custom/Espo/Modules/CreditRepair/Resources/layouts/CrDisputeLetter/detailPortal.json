@@ -1,0 +1,13 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "letterType"}, {"name": "bureau"}],
+            [{"name": "sentDate"}, {"name": "responseDate"}],
+            [{"name": "responseType"}, false],
+            [{"name": "notes", "fullWidth": true}],
+            [{"name": "attachments", "fullWidth": true}]
+        ]
+    }
+]

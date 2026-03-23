@@ -1,0 +1,20 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-credit-card",
+    "additionalLayouts": {
+        "listForCrClient": {
+            "type": "listSmall"
+        }
+    },
+    "filterList": [
+        {"name": "inDispute", "style": "warning"},
+        {"name": "removed", "style": "success"}
+    ],
+    "relationshipPanels": {
+        "disputeLetters": {
+            "layout": "listForCrTradeline",
+            "createDisabled": false,
+            "selectDisabled": true
+        }
+    }
+}

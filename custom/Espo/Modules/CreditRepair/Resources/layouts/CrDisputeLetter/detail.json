@@ -1,0 +1,15 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "letterType"}, {"name": "bureau"}],
+            [{"name": "crClient"}, {"name": "tradeline"}],
+            [{"name": "sentDate"}, {"name": "responseDeadline"}],
+            [{"name": "responseDate"}, {"name": "responseType"}],
+            [{"name": "content", "fullWidth": true}],
+            [{"name": "notes", "fullWidth": true}],
+            [{"name": "attachments", "fullWidth": true}]
+        ]
+    }
+]

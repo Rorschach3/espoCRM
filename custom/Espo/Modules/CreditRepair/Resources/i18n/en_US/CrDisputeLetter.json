@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "name": "Letter Name",
+        "letterType": "Letter Type",
+        "bureau": "Bureau / Recipient",
+        "status": "Status",
+        "sentDate": "Sent Date",
+        "responseDeadline": "Response Deadline",
+        "responseDate": "Response Date",
+        "responseType": "Response Type",
+        "content": "Letter Content",
+        "notes": "Notes",
+        "attachments": "Attachments",
+        "crClient": "Client",
+        "tradeline": "Tradeline",
+        "assignedUser": "Assigned To",
+        "teams": "Teams"
+    },
+    "links": {
+        "crClient": "Client",
+        "tradeline": "Tradeline"
+    },
+    "options": {
+        "letterType": {
+            "Initial Dispute": "Initial Dispute",
+            "Follow-Up Dispute": "Follow-Up Dispute",
+            "Debt Validation": "Debt Validation",
+            "Method of Verification": "Method of Verification",
+            "Goodwill Deletion": "Goodwill Deletion",
+            "Pay for Delete": "Pay for Delete",
+            "Cease and Desist": "Cease and Desist",
+            "Identity Theft": "Identity Theft",
+            "Other": "Other"
+        },
+        "bureau": {
+            "Equifax": "Equifax",
+            "Experian": "Experian",
+            "TransUnion": "TransUnion",
+            "All Bureaus": "All Bureaus",
+            "Creditor/CA": "Creditor / Collection Agency"
+        },
+        "status": {
+            "Draft": "Draft",
+            "Sent": "Sent",
+            "Responded": "Responded",
+            "In Review": "In Review",
+            "Resolved": "Resolved",
+            "Closed": "Closed"
+        },
+        "responseType": {
+            "Deleted": "Deleted",
+            "Updated": "Updated",
+            "Verified": "Verified",
+            "No Response": "No Response",
+            "Needs Investigation": "Needs Investigation",
+            "Insufficient": "Insufficient"
+        }
+    },
+    "labels": {
+        "Create CrDisputeLetter": "Create Dispute Letter"
+    },
+    "presetFilters": {
+        "sent": "Sent",
+        "resolved": "Resolved",
+        "draft": "Draft"
+    }
+}

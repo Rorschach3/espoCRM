@@ -1,0 +1,8 @@
+[
+    {"name": "name", "link": true},
+    {"name": "amount", "width": 14},
+    {"name": "paymentDate", "width": 14},
+    {"name": "paymentMethod", "width": 16},
+    {"name": "status", "width": 12},
+    {"name": "crClient", "width": 16}
+]

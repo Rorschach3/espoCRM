@@ -1,0 +1,17 @@
+{
+    "scopeNames": {
+        "CrClient": "CR Client",
+        "CrTradeline": "Tradeline",
+        "CrDisputeLetter": "Dispute Letter",
+        "CrPayment": "Payment"
+    },
+    "scopeNamesPlural": {
+        "CrClient": "CR Clients",
+        "CrTradeline": "Tradelines",
+        "CrDisputeLetter": "Dispute Letters",
+        "CrPayment": "Payments"
+    },
+    "scheduledJob": {
+        "SendMonthlyClientStatusUpdate": "Send Monthly Client Status Update"
+    }
+}

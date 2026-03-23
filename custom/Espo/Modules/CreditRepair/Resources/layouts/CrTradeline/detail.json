@@ -1,0 +1,14 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [{"name": "creditorName"}, {"name": "status"}],
+            [{"name": "accountNumber"}, {"name": "accountType"}],
+            [{"name": "bureau", "fullWidth": true}],
+            [{"name": "balance"}, {"name": "creditLimit"}],
+            [{"name": "openedDate"}, {"name": "reportedDate"}],
+            [{"name": "paymentStatus"}, {"name": "crClient"}],
+            [{"name": "remarks", "fullWidth": true}]
+        ]
+    }
+]

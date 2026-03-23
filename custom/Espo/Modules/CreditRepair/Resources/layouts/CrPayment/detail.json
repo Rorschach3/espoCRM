@@ -1,0 +1,12 @@
+[
+    {
+        "label": "",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "amount"}, {"name": "paymentDate"}],
+            [{"name": "paymentMethod"}, {"name": "crClient"}],
+            [{"name": "transactionId"}, {"name": "invoiceNumber"}],
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]
