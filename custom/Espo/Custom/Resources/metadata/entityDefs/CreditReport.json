@@ -1,0 +1,126 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 100,
+      "isRequired": true
+    },
+    "creditClient": {
+      "type": "link",
+      "entity": "CreditClient",
+      "isRequired": true
+    },
+    "creditClientName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "bureau": {
+      "type": "enum",
+      "options": ["Equifax", "Experian", "TransUnion"],
+      "isRequired": true
+    },
+    "reportDate": {
+      "type": "date",
+      "isRequired": true
+    },
+    "creditScore": {
+      "type": "int",
+      "min": 300,
+      "max": 850
+    },
+    "scoreModel": {
+      "type": "enum",
+      "options": ["FICO 8", "FICO 9", "VantageScore 3.0", "VantageScore 4.0", "Other"]
+    },
+    "numberOfNegativeItems": {
+      "type": "int",
+      "default": 0
+    },
+    "numberOfPositiveItems": {
+      "type": "int",
+      "default": 0
+    },
+    "numberOfInquiries": {
+      "type": "int",
+      "default": 0
+    },
+    "totalDebt": {
+      "type": "currency"
+    },
+    "disputeRound": {
+      "type": "link",
+      "entity": "DisputeRound"
+    },
+    "disputeRoundName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "reportFile": {
+      "type": "file",
+      "accept": ["application/pdf", "image/*"]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "entity": "User"
+    },
+    "assignedUserName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "creditClient": {
+      "type": "belongsTo",
+      "entity": "CreditClient"
+    },
+    "disputeRound": {
+      "type": "belongsTo",
+      "entity": "DisputeRound"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "indexes": {
+    "creditClient": {
+      "columns": ["creditClientId", "deleted"]
+    },
+    "reportDate": {
+      "columns": ["reportDate", "deleted"]
+    }
+  },
+  "collection": {
+    "orderBy": "reportDate",
+    "order": "desc"
+  }
+}

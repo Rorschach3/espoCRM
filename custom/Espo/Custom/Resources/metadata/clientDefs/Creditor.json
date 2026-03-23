@@ -1,0 +1,10 @@
+{
+  "controller": "crm:controllers/record",
+  "iconClass": "fas fa-building",
+  "color": "#607D8B",
+  "views": {
+    "list": "views/record/list",
+    "detail": "views/record/detail",
+    "edit": "views/record/edit"
+  }
+}

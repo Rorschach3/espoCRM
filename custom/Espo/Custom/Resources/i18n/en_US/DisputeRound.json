@@ -1,0 +1,31 @@
+{
+  "labels": {
+    "DisputeRound": "Dispute Round",
+    "DisputeRounds": "Dispute Rounds"
+  },
+  "fields": {
+    "name": "Round Name",
+    "creditClient": "Client",
+    "roundNumber": "Round #",
+    "status": "Status",
+    "startDate": "Start Date",
+    "responseDeadline": "Response Deadline",
+    "completedDate": "Completed Date",
+    "lettersCount": "Letters Sent",
+    "itemsCount": "Items Disputed",
+    "deletedCount": "Items Deleted",
+    "updatedCount": "Items Updated",
+    "verifiedCount": "Items Verified",
+    "notes": "Notes",
+    "assignedUser": "Assigned Specialist"
+  },
+  "options": {
+    "status": {
+      "Pending": "Pending",
+      "In Progress": "In Progress",
+      "Awaiting Response": "Awaiting Response",
+      "Completed": "Completed",
+      "Cancelled": "Cancelled"
+    }
+  }
+}

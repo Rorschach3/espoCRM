@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Report Info",
+    "rows": [
+      [{"name": "creditClient"}, {"name": "bureau"}],
+      [{"name": "reportDate"}, {"name": "scoreModel"}],
+      [{"name": "creditScore"}, {"name": "totalDebt"}],
+      [{"name": "numberOfNegativeItems"}, {"name": "numberOfPositiveItems"}],
+      [{"name": "numberOfInquiries"}, {"name": "disputeRound"}]
+    ]
+  },
+  {
+    "label": "File",
+    "rows": [
+      [{"name": "reportFile"}, false]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

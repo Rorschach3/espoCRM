@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Letter Details",
+    "rows": [
+      [{"name": "creditClient"}, {"name": "disputeRound"}],
+      [{"name": "bureau"}, {"name": "letterType"}],
+      [{"name": "status"}, {"name": "certifiedMailNumber"}],
+      [{"name": "sentDate"}, {"name": "responseDeadline"}],
+      [{"name": "responseDate"}, {"name": "assignedUser"}]
+    ]
+  },
+  {
+    "label": "Files",
+    "rows": [
+      [{"name": "letterFile"}, {"name": "responseFile"}]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "labels": {
+    "DisputeLetter": "Dispute Letter",
+    "DisputeLetters": "Dispute Letters"
+  },
+  "fields": {
+    "name": "Letter Name",
+    "creditClient": "Client",
+    "disputeRound": "Dispute Round",
+    "bureau": "Sent To",
+    "letterType": "Letter Type",
+    "status": "Status",
+    "sentDate": "Date Sent",
+    "responseDeadline": "Response Due",
+    "responseDate": "Response Received",
+    "certifiedMailNumber": "Certified Mail #",
+    "letterFile": "Letter (PDF/DOC)",
+    "responseFile": "Bureau Response",
+    "notes": "Notes",
+    "assignedUser": "Assigned To"
+  },
+  "options": {
+    "bureau": {
+      "Equifax": "Equifax",
+      "Experian": "Experian",
+      "TransUnion": "TransUnion",
+      "Creditor": "Creditor",
+      "CFPB": "CFPB",
+      "FTC": "FTC"
+    },
+    "letterType": {
+      "Initial Dispute": "Initial Dispute",
+      "Follow-Up Dispute": "Follow-Up Dispute",
+      "Method of Verification": "Method of Verification",
+      "Goodwill Letter": "Goodwill Letter",
+      "Debt Validation": "Debt Validation",
+      "Pay for Delete": "Pay for Delete",
+      "CFPB Complaint": "CFPB Complaint",
+      "FTC Report": "FTC Report",
+      "Other": "Other"
+    },
+    "status": {
+      "Draft": "Draft",
+      "Sent": "Sent",
+      "Response Received": "Response Received",
+      "No Response": "No Response",
+      "Escalated": "Escalated"
+    }
+  }
+}

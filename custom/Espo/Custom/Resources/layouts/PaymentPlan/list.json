@@ -1,0 +1,10 @@
+[
+  {"name": "name", "link": true},
+  {"name": "creditClient", "link": true},
+  {"name": "status"},
+  {"name": "billingCycle"},
+  {"name": "amount"},
+  {"name": "nextBillingDate"},
+  {"name": "totalPaid"},
+  {"name": "paymentMethod"}
+]

@@ -1,0 +1,145 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 150,
+      "isRequired": true
+    },
+    "creditClient": {
+      "type": "link",
+      "entity": "CreditClient",
+      "isRequired": true
+    },
+    "creditClientName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "disputeRound": {
+      "type": "link",
+      "entity": "DisputeRound"
+    },
+    "disputeRoundName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "bureau": {
+      "type": "enum",
+      "options": ["Equifax", "Experian", "TransUnion", "Creditor", "CFPB", "FTC"],
+      "isRequired": true
+    },
+    "letterType": {
+      "type": "enum",
+      "options": [
+        "Initial Dispute",
+        "Follow-Up Dispute",
+        "Method of Verification",
+        "Goodwill Letter",
+        "Debt Validation",
+        "Pay for Delete",
+        "CFPB Complaint",
+        "FTC Report",
+        "Other"
+      ],
+      "isRequired": true
+    },
+    "status": {
+      "type": "enum",
+      "options": ["Draft", "Sent", "Response Received", "No Response", "Escalated"],
+      "default": "Draft",
+      "isRequired": true
+    },
+    "sentDate": {
+      "type": "date"
+    },
+    "responseDeadline": {
+      "type": "date"
+    },
+    "responseDate": {
+      "type": "date"
+    },
+    "certifiedMailNumber": {
+      "type": "varchar",
+      "maxLength": 30
+    },
+    "letterFile": {
+      "type": "file",
+      "accept": ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"]
+    },
+    "responseFile": {
+      "type": "file",
+      "accept": ["application/pdf", "image/*"]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "entity": "User"
+    },
+    "assignedUserName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "creditClient": {
+      "type": "belongsTo",
+      "entity": "CreditClient"
+    },
+    "disputeRound": {
+      "type": "belongsTo",
+      "entity": "DisputeRound"
+    },
+    "disputeItems": {
+      "type": "hasMany",
+      "entity": "DisputeItem",
+      "foreign": "disputeLetters",
+      "relationName": "disputeLetterItem"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "indexes": {
+    "creditClient": {
+      "columns": ["creditClientId", "deleted"]
+    },
+    "status": {
+      "columns": ["status", "deleted"]
+    },
+    "bureau": {
+      "columns": ["bureau", "deleted"]
+    }
+  },
+  "collection": {
+    "orderBy": "sentDate",
+    "order": "desc"
+  }
+}

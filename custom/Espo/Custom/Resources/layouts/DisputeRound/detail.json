@@ -1,0 +1,25 @@
+[
+  {
+    "label": "Round Info",
+    "rows": [
+      [{"name": "creditClient"}, {"name": "roundNumber"}],
+      [{"name": "status"}, {"name": "assignedUser"}],
+      [{"name": "startDate"}, {"name": "responseDeadline"}],
+      [{"name": "completedDate"}, false]
+    ]
+  },
+  {
+    "label": "Results",
+    "rows": [
+      [{"name": "lettersCount"}, {"name": "itemsCount"}],
+      [{"name": "deletedCount"}, {"name": "updatedCount"}],
+      [{"name": "verifiedCount"}, false]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

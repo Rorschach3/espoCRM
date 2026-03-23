@@ -1,0 +1,16 @@
+{
+  "tabList": [
+    "CreditClient",
+    "DisputeRound",
+    "DisputeItem",
+    "DisputeLetter",
+    "CreditReport",
+    "PaymentPlan",
+    "Creditor"
+  ],
+  "quickCreateList": [
+    "CreditClient",
+    "DisputeItem",
+    "DisputeLetter"
+  ]
+}

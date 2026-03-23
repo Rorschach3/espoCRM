@@ -1,0 +1,23 @@
+[
+  {
+    "label": "Creditor Info",
+    "rows": [
+      [{"name": "name"}, {"name": "creditorType"}],
+      [{"name": "phone"}, {"name": "website"}],
+      [{"name": "address"}, false]
+    ]
+  },
+  {
+    "label": "Dispute Contact",
+    "rows": [
+      [{"name": "disputeAddress"}, false],
+      [{"name": "disputePhone"}, false]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

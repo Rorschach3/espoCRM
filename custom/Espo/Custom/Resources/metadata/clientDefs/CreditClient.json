@@ -1,0 +1,32 @@
+{
+  "controller": "crm:controllers/record",
+  "iconClass": "fas fa-user-shield",
+  "color": "#2196F3",
+  "statusField": "status",
+  "kanbanStatusIgnoreList": ["Cancelled"],
+  "kanbanViewMode": true,
+  "views": {
+    "list": "views/record/list",
+    "detail": "views/record/detail",
+    "edit": "views/record/edit"
+  },
+  "filterList": [
+    {"name": "myRecords"},
+    {"name": "active", "label": "Active Clients"},
+    {"name": "leads", "label": "Leads"}
+  ],
+  "sidePanels": {
+    "detail": [
+      {"name": "creditReports", "label": "Credit Reports", "entityType": "CreditReport"},
+      {"name": "disputeRounds", "label": "Dispute Rounds", "entityType": "DisputeRound"},
+      {"name": "disputeItems", "label": "Dispute Items", "entityType": "DisputeItem"},
+      {"name": "disputeLetters", "label": "Dispute Letters", "entityType": "DisputeLetter"},
+      {"name": "paymentPlans", "label": "Payment Plans", "entityType": "PaymentPlan"}
+    ]
+  },
+  "menu": {
+    "detail": {
+      "buttons": []
+    }
+  }
+}

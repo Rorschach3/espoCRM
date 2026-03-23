@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Dispute Details",
+    "rows": [
+      [{"name": "creditClient"}, {"name": "creditor"}],
+      [{"name": "accountType"}, {"name": "accountNumber"}],
+      [{"name": "bureaus"}, {"name": "amount"}],
+      [{"name": "dateOpened"}, {"name": "dateReported"}],
+      [{"name": "status"}, {"name": "priority"}],
+      [{"name": "disputeReason"}, {"name": "result"}],
+      [{"name": "disputeRound"}, {"name": "assignedUser"}]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "controller": "crm:controllers/record",
+  "iconClass": "fas fa-dollar-sign",
+  "color": "#009688",
+  "statusField": "status",
+  "views": {
+    "list": "views/record/list",
+    "detail": "views/record/detail",
+    "edit": "views/record/edit"
+  },
+  "filterList": [
+    {"name": "myRecords"},
+    {"name": "active", "label": "Active Plans"}
+  ]
+}

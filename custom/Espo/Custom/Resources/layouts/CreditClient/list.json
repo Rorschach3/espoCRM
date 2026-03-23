@@ -1,0 +1,10 @@
+[
+  {"name": "name", "link": true},
+  {"name": "status"},
+  {"name": "servicePackage"},
+  {"name": "phone"},
+  {"name": "email"},
+  {"name": "startDate"},
+  {"name": "monthlyFee"},
+  {"name": "assignedUser"}
+]

@@ -1,0 +1,135 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 100,
+      "isRequired": true
+    },
+    "creditClient": {
+      "type": "link",
+      "entity": "CreditClient",
+      "isRequired": true
+    },
+    "creditClientName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "roundNumber": {
+      "type": "int",
+      "isRequired": true,
+      "min": 1,
+      "default": 1
+    },
+    "status": {
+      "type": "enum",
+      "options": ["Pending", "In Progress", "Awaiting Response", "Completed", "Cancelled"],
+      "default": "Pending",
+      "isRequired": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "responseDeadline": {
+      "type": "date"
+    },
+    "completedDate": {
+      "type": "date"
+    },
+    "lettersCount": {
+      "type": "int",
+      "default": 0,
+      "readOnly": true
+    },
+    "itemsCount": {
+      "type": "int",
+      "default": 0,
+      "readOnly": true
+    },
+    "deletedCount": {
+      "type": "int",
+      "default": 0
+    },
+    "updatedCount": {
+      "type": "int",
+      "default": 0
+    },
+    "verifiedCount": {
+      "type": "int",
+      "default": 0
+    },
+    "notes": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "entity": "User"
+    },
+    "assignedUserName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "creditClient": {
+      "type": "belongsTo",
+      "entity": "CreditClient"
+    },
+    "creditReports": {
+      "type": "hasMany",
+      "entity": "CreditReport",
+      "foreign": "disputeRound"
+    },
+    "disputeLetters": {
+      "type": "hasMany",
+      "entity": "DisputeLetter",
+      "foreign": "disputeRound"
+    },
+    "disputeItems": {
+      "type": "hasMany",
+      "entity": "DisputeItem",
+      "foreign": "disputeRound"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "indexes": {
+    "creditClient": {
+      "columns": ["creditClientId", "deleted"]
+    },
+    "status": {
+      "columns": ["status", "deleted"]
+    }
+  },
+  "collection": {
+    "orderBy": "roundNumber",
+    "order": "desc"
+  }
+}

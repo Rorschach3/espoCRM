@@ -1,0 +1,114 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 100,
+      "isRequired": true
+    },
+    "creditClient": {
+      "type": "link",
+      "entity": "CreditClient",
+      "isRequired": true
+    },
+    "creditClientName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "status": {
+      "type": "enum",
+      "options": ["Active", "Paused", "Cancelled", "Completed"],
+      "default": "Active",
+      "isRequired": true
+    },
+    "billingCycle": {
+      "type": "enum",
+      "options": ["Monthly", "Bi-Weekly", "Quarterly", "One-Time"],
+      "default": "Monthly",
+      "isRequired": true
+    },
+    "amount": {
+      "type": "currency",
+      "isRequired": true
+    },
+    "setupFee": {
+      "type": "currency",
+      "default": 0
+    },
+    "paymentMethod": {
+      "type": "enum",
+      "options": ["Credit Card", "Debit Card", "ACH / Bank Transfer", "Check", "Cash", "Other"]
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "nextBillingDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "totalPaid": {
+      "type": "currency",
+      "default": 0
+    },
+    "notes": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "entity": "User"
+    },
+    "assignedUserName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "creditClient": {
+      "type": "belongsTo",
+      "entity": "CreditClient"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "indexes": {
+    "creditClient": {
+      "columns": ["creditClientId", "deleted"]
+    },
+    "status": {
+      "columns": ["status", "deleted"]
+    }
+  },
+  "collection": {
+    "orderBy": "createdAt",
+    "order": "desc"
+  }
+}

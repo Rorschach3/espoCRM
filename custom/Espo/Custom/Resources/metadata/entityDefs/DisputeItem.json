@@ -1,0 +1,174 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 150,
+      "isRequired": true
+    },
+    "creditClient": {
+      "type": "link",
+      "entity": "CreditClient",
+      "isRequired": true
+    },
+    "creditClientName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "creditor": {
+      "type": "link",
+      "entity": "Creditor"
+    },
+    "creditorName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "disputeRound": {
+      "type": "link",
+      "entity": "DisputeRound"
+    },
+    "disputeRoundName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "bureaus": {
+      "type": "multiEnum",
+      "options": ["Equifax", "Experian", "TransUnion"],
+      "isRequired": true
+    },
+    "accountType": {
+      "type": "enum",
+      "options": [
+        "Collection",
+        "Charge-Off",
+        "Late Payment",
+        "Hard Inquiry",
+        "Bankruptcy",
+        "Repossession",
+        "Foreclosure",
+        "Judgment",
+        "Tax Lien",
+        "Medical Debt",
+        "Student Loan",
+        "Other"
+      ],
+      "isRequired": true
+    },
+    "accountNumber": {
+      "type": "varchar",
+      "maxLength": 50
+    },
+    "amount": {
+      "type": "currency"
+    },
+    "dateOpened": {
+      "type": "date"
+    },
+    "dateReported": {
+      "type": "date"
+    },
+    "status": {
+      "type": "enum",
+      "options": ["Identified", "In Dispute", "Deleted", "Updated", "Verified Accurate", "Closed"],
+      "default": "Identified",
+      "isRequired": true
+    },
+    "result": {
+      "type": "enum",
+      "options": ["", "Deleted", "Updated — Positive", "Verified Accurate", "No Response", "In Progress"]
+    },
+    "priority": {
+      "type": "enum",
+      "options": ["High", "Medium", "Low"],
+      "default": "Medium"
+    },
+    "disputeReason": {
+      "type": "enum",
+      "options": [
+        "Not Mine",
+        "Inaccurate Information",
+        "Duplicate Account",
+        "Outdated Information",
+        "Incorrect Balance",
+        "Incorrect Status",
+        "Identity Theft",
+        "Other"
+      ]
+    },
+    "notes": {
+      "type": "text"
+    },
+    "assignedUser": {
+      "type": "link",
+      "entity": "User"
+    },
+    "assignedUserName": {
+      "type": "varchar",
+      "notStorable": true
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "creditClient": {
+      "type": "belongsTo",
+      "entity": "CreditClient"
+    },
+    "creditor": {
+      "type": "belongsTo",
+      "entity": "Creditor"
+    },
+    "disputeRound": {
+      "type": "belongsTo",
+      "entity": "DisputeRound"
+    },
+    "disputeLetters": {
+      "type": "hasMany",
+      "entity": "DisputeLetter",
+      "foreign": "disputeItems",
+      "relationName": "disputeLetterItem"
+    },
+    "assignedUser": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "indexes": {
+    "creditClient": {
+      "columns": ["creditClientId", "deleted"]
+    },
+    "status": {
+      "columns": ["status", "deleted"]
+    },
+    "priority": {
+      "columns": ["priority", "deleted"]
+    }
+  },
+  "collection": {
+    "orderBy": "createdAt",
+    "order": "desc"
+  }
+}

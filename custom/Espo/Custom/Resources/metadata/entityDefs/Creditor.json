@@ -1,0 +1,69 @@
+{
+  "fields": {
+    "name": {
+      "type": "varchar",
+      "maxLength": 150,
+      "isRequired": true
+    },
+    "creditorType": {
+      "type": "enum",
+      "options": ["Original Creditor", "Collection Agency", "Credit Card", "Medical", "Utility", "Other"],
+      "isRequired": true
+    },
+    "phone": {
+      "type": "phone"
+    },
+    "website": {
+      "type": "url"
+    },
+    "address": {
+      "type": "address"
+    },
+    "disputeAddress": {
+      "type": "address"
+    },
+    "disputePhone": {
+      "type": "phone"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "createdAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "modifiedAt": {
+      "type": "datetime",
+      "readOnly": true
+    },
+    "createdBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    },
+    "modifiedBy": {
+      "type": "link",
+      "entity": "User",
+      "readOnly": true
+    }
+  },
+  "links": {
+    "disputeItems": {
+      "type": "hasMany",
+      "entity": "DisputeItem",
+      "foreign": "creditor"
+    },
+    "createdBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    },
+    "modifiedBy": {
+      "type": "belongsTo",
+      "entity": "User"
+    }
+  },
+  "collection": {
+    "orderBy": "name",
+    "order": "asc"
+  }
+}

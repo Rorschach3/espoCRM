@@ -1,0 +1,19 @@
+[
+  {
+    "label": "Plan Details",
+    "rows": [
+      [{"name": "creditClient"}, {"name": "status"}],
+      [{"name": "billingCycle"}, {"name": "amount"}],
+      [{"name": "setupFee"}, {"name": "paymentMethod"}],
+      [{"name": "startDate"}, {"name": "nextBillingDate"}],
+      [{"name": "endDate"}, {"name": "totalPaid"}],
+      [{"name": "assignedUser"}, false]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "labels": {
+    "Creditor": "Creditor",
+    "Creditors": "Creditors"
+  },
+  "fields": {
+    "name": "Creditor Name",
+    "creditorType": "Type",
+    "phone": "Phone",
+    "website": "Website",
+    "address": "Address",
+    "disputeAddress": "Dispute Mailing Address",
+    "disputePhone": "Dispute Phone",
+    "notes": "Notes"
+  },
+  "options": {
+    "creditorType": {
+      "Original Creditor": "Original Creditor",
+      "Collection Agency": "Collection Agency",
+      "Credit Card": "Credit Card",
+      "Medical": "Medical",
+      "Utility": "Utility",
+      "Other": "Other"
+    }
+  }
+}

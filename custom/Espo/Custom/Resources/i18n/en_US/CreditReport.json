@@ -1,0 +1,35 @@
+{
+  "labels": {
+    "CreditReport": "Credit Report",
+    "CreditReports": "Credit Reports"
+  },
+  "fields": {
+    "name": "Report Name",
+    "creditClient": "Client",
+    "bureau": "Bureau",
+    "reportDate": "Report Date",
+    "creditScore": "Credit Score",
+    "scoreModel": "Score Model",
+    "numberOfNegativeItems": "Negative Items",
+    "numberOfPositiveItems": "Positive Items",
+    "numberOfInquiries": "Inquiries",
+    "totalDebt": "Total Debt",
+    "disputeRound": "Associated Round",
+    "reportFile": "Report File",
+    "notes": "Notes"
+  },
+  "options": {
+    "bureau": {
+      "Equifax": "Equifax",
+      "Experian": "Experian",
+      "TransUnion": "TransUnion"
+    },
+    "scoreModel": {
+      "FICO 8": "FICO 8",
+      "FICO 9": "FICO 9",
+      "VantageScore 3.0": "VantageScore 3.0",
+      "VantageScore 4.0": "VantageScore 4.0",
+      "Other": "Other"
+    }
+  }
+}

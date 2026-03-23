@@ -1,0 +1,10 @@
+[
+  {"name": "name", "link": true},
+  {"name": "creditClient", "link": true},
+  {"name": "bureau"},
+  {"name": "reportDate"},
+  {"name": "creditScore"},
+  {"name": "numberOfNegativeItems"},
+  {"name": "numberOfInquiries"},
+  {"name": "totalDebt"}
+]

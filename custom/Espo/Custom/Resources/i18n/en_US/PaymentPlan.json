@@ -1,0 +1,43 @@
+{
+  "labels": {
+    "PaymentPlan": "Payment Plan",
+    "PaymentPlans": "Payment Plans"
+  },
+  "fields": {
+    "name": "Plan Name",
+    "creditClient": "Client",
+    "status": "Status",
+    "billingCycle": "Billing Cycle",
+    "amount": "Amount",
+    "setupFee": "Setup Fee",
+    "paymentMethod": "Payment Method",
+    "startDate": "Start Date",
+    "nextBillingDate": "Next Billing Date",
+    "endDate": "End Date",
+    "totalPaid": "Total Paid",
+    "notes": "Notes",
+    "assignedUser": "Assigned To"
+  },
+  "options": {
+    "status": {
+      "Active": "Active",
+      "Paused": "Paused",
+      "Cancelled": "Cancelled",
+      "Completed": "Completed"
+    },
+    "billingCycle": {
+      "Monthly": "Monthly",
+      "Bi-Weekly": "Bi-Weekly",
+      "Quarterly": "Quarterly",
+      "One-Time": "One-Time"
+    },
+    "paymentMethod": {
+      "Credit Card": "Credit Card",
+      "Debit Card": "Debit Card",
+      "ACH / Bank Transfer": "ACH / Bank Transfer",
+      "Check": "Check",
+      "Cash": "Cash",
+      "Other": "Other"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "label": "Overview",
+    "rows": [
+      [{"name": "name"}, {"name": "status"}],
+      [{"name": "email"}, {"name": "phone"}],
+      [{"name": "servicePackage"}, {"name": "monthlyFee"}],
+      [{"name": "startDate"}, {"name": "expectedCompletionDate"}],
+      [{"name": "assignedUser"}, {"name": "source"}]
+    ]
+  },
+  {
+    "label": "Personal Info",
+    "rows": [
+      [{"name": "address"}, false],
+      [{"name": "dateOfBirth"}, {"name": "ssnLast4"}]
+    ]
+  },
+  {
+    "label": "Credit Goal",
+    "rows": [
+      [{"name": "creditGoal"}]
+    ]
+  },
+  {
+    "label": "Notes",
+    "rows": [
+      [{"name": "notes"}]
+    ]
+  }
+]

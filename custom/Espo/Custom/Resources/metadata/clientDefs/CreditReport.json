@@ -1,0 +1,13 @@
+{
+  "controller": "crm:controllers/record",
+  "iconClass": "fas fa-chart-line",
+  "color": "#4CAF50",
+  "views": {
+    "list": "views/record/list",
+    "detail": "views/record/detail",
+    "edit": "views/record/edit"
+  },
+  "filterList": [
+    {"name": "myRecords"}
+  ]
+}

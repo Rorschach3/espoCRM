@@ -1,0 +1,10 @@
+[
+  {"name": "name", "link": true},
+  {"name": "creditClient", "link": true},
+  {"name": "roundNumber"},
+  {"name": "status"},
+  {"name": "startDate"},
+  {"name": "responseDeadline"},
+  {"name": "lettersCount"},
+  {"name": "deletedCount"}
+]

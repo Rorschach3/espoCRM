@@ -1,0 +1,45 @@
+{
+  "labels": {
+    "CreditClient": "Credit Client",
+    "CreditClients": "Credit Clients"
+  },
+  "fields": {
+    "name": "Client Name",
+    "status": "Status",
+    "servicePackage": "Service Package",
+    "creditGoal": "Credit Goal",
+    "startDate": "Start Date",
+    "expectedCompletionDate": "Expected Completion Date",
+    "monthlyFee": "Monthly Fee",
+    "source": "Lead Source",
+    "ssnLast4": "SSN Last 4",
+    "dateOfBirth": "Date of Birth",
+    "assignedUser": "Assigned Specialist",
+    "notes": "Notes",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address"
+  },
+  "options": {
+    "status": {
+      "Lead": "Lead",
+      "Active": "Active",
+      "Paused": "Paused",
+      "Completed": "Completed",
+      "Cancelled": "Cancelled"
+    },
+    "servicePackage": {
+      "Basic": "Basic",
+      "Standard": "Standard",
+      "Premium": "Premium"
+    },
+    "source": {
+      "": "",
+      "Referral": "Referral",
+      "Website": "Website",
+      "Social Media": "Social Media",
+      "Advertisement": "Advertisement",
+      "Other": "Other"
+    }
+  }
+}

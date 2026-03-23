@@ -1,0 +1,73 @@
+services:
+  espocrm-db:
+    image: mariadb:latest
+    container_name: espocrm-db
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_password}
+      MARIADB_DATABASE: ${DB_NAME:-espocrm}
+      MARIADB_USER: ${DB_USER:-espocrm}
+      MARIADB_PASSWORD: ${DB_PASSWORD:-database_password}
+    volumes:
+      - espocrm-db:/var/lib/mysql
+    restart: always
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+
+  espocrm:
+    image: espocrm/espocrm
+    container_name: espocrm
+    environment:
+      ESPOCRM_DATABASE_PLATFORM: Mysql
+      ESPOCRM_DATABASE_HOST: espocrm-db
+      ESPOCRM_DATABASE_USER: ${DB_USER:-espocrm}
+      ESPOCRM_DATABASE_PASSWORD: ${DB_PASSWORD:-database_password}
+      ESPOCRM_DATABASE_NAME: ${DB_NAME:-espocrm}
+      ESPOCRM_ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ESPOCRM_ADMIN_PASSWORD: ${ADMIN_PASSWORD:-CreditRepair2024!}
+      ESPOCRM_SITE_URL: ${SITE_URL:-http://localhost:8080}
+    volumes:
+      - espocrm:/var/www/html
+      - ./custom:/var/www/html/custom
+    restart: always
+    depends_on:
+      espocrm-db:
+        condition: service_healthy
+    ports:
+      - "${APP_PORT:-8080}:80"
+
+  espocrm-daemon:
+    image: espocrm/espocrm
+    container_name: espocrm-daemon
+    volumes:
+      - espocrm:/var/www/html
+      - ./custom:/var/www/html/custom
+    restart: always
+    entrypoint: docker-daemon.sh
+    depends_on:
+      - espocrm
+
+  espocrm-websocket:
+    image: espocrm/espocrm
+    container_name: espocrm-websocket
+    environment:
+      ESPOCRM_CONFIG_USE_WEB_SOCKET: "true"
+      ESPOCRM_CONFIG_WEB_SOCKET_URL: "ws://${WEBSOCKET_HOST:-localhost}:${WEBSOCKET_PORT:-8081}"
+      ESPOCRM_CONFIG_WEB_SOCKET_ZERO_M_Q_SUBSCRIBER_DSN: "tcp://*:7777"
+      ESPOCRM_CONFIG_WEB_SOCKET_ZERO_M_Q_SUBMISSION_DSN: "tcp://espocrm-websocket:7777"
+    volumes:
+      - espocrm:/var/www/html
+      - ./custom:/var/www/html/custom
+    restart: always
+    entrypoint: docker-websocket.sh
+    ports:
+      - "${WEBSOCKET_PORT:-8081}:8080"
+    depends_on:
+      - espocrm
+
+volumes:
+  espocrm-db:
+  espocrm:

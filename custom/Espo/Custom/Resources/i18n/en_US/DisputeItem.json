@@ -1,0 +1,71 @@
+{
+  "labels": {
+    "DisputeItem": "Dispute Item",
+    "DisputeItems": "Dispute Items"
+  },
+  "fields": {
+    "name": "Item Name",
+    "creditClient": "Client",
+    "creditor": "Creditor",
+    "disputeRound": "Dispute Round",
+    "bureaus": "Bureaus Reporting",
+    "accountType": "Account Type",
+    "accountNumber": "Account Number",
+    "amount": "Amount",
+    "dateOpened": "Date Opened",
+    "dateReported": "Date Reported",
+    "status": "Status",
+    "result": "Result",
+    "priority": "Priority",
+    "disputeReason": "Dispute Reason",
+    "notes": "Notes",
+    "assignedUser": "Assigned To"
+  },
+  "options": {
+    "accountType": {
+      "Collection": "Collection",
+      "Charge-Off": "Charge-Off",
+      "Late Payment": "Late Payment",
+      "Hard Inquiry": "Hard Inquiry",
+      "Bankruptcy": "Bankruptcy",
+      "Repossession": "Repossession",
+      "Foreclosure": "Foreclosure",
+      "Judgment": "Judgment",
+      "Tax Lien": "Tax Lien",
+      "Medical Debt": "Medical Debt",
+      "Student Loan": "Student Loan",
+      "Other": "Other"
+    },
+    "status": {
+      "Identified": "Identified",
+      "In Dispute": "In Dispute",
+      "Deleted": "Deleted",
+      "Updated": "Updated",
+      "Verified Accurate": "Verified Accurate",
+      "Closed": "Closed"
+    },
+    "result": {
+      "": "",
+      "Deleted": "Deleted",
+      "Updated — Positive": "Updated — Positive",
+      "Verified Accurate": "Verified Accurate",
+      "No Response": "No Response",
+      "In Progress": "In Progress"
+    },
+    "priority": {
+      "High": "High",
+      "Medium": "Medium",
+      "Low": "Low"
+    },
+    "disputeReason": {
+      "Not Mine": "Not Mine",
+      "Inaccurate Information": "Inaccurate Information",
+      "Duplicate Account": "Duplicate Account",
+      "Outdated Information": "Outdated Information",
+      "Incorrect Balance": "Incorrect Balance",
+      "Incorrect Status": "Incorrect Status",
+      "Identity Theft": "Identity Theft",
+      "Other": "Other"
+    }
+  }
+}
