@@ -1,0 +1,25 @@
+[
+    {
+        "label": "My Credit Profile",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "emailAddress"}, {"name": "phoneNumber"}],
+            [{"name": "enrollmentDate"}, {"name": "expectedCompletionDate"}]
+        ]
+    },
+    {
+        "label": "My Credit Scores",
+        "rows": [
+            [{"name": "creditScoreEquifax"}, {"name": "creditScoreExperian"}],
+            [{"name": "creditScoreTransUnion"}, false]
+        ]
+    },
+    {
+        "label": "My Account Balance",
+        "rows": [
+            [{"name": "totalBalance"}, {"name": "totalPaid"}],
+            [{"name": "outstandingBalance"}, false],
+            [{"name": "lastPaymentDate"}, {"name": "nextPaymentDueDate"}]
+        ]
+    }
+]

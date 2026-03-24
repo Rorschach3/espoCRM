@@ -1,0 +1,35 @@
+[
+    {
+        "label": "Client Information",
+        "rows": [
+            [{"name": "name"}, {"name": "status"}],
+            [{"name": "emailAddress"}, {"name": "phoneNumber"}],
+            [{"name": "dateOfBirth"}, {"name": "ssnLast4"}],
+            [{"name": "address", "fullWidth": true}]
+        ]
+    },
+    {
+        "label": "Credit Scores",
+        "rows": [
+            [{"name": "creditScoreEquifax"}, {"name": "creditScoreExperian"}],
+            [{"name": "creditScoreTransUnion"}, false]
+        ]
+    },
+    {
+        "label": "Service & Billing",
+        "rows": [
+            [{"name": "servicePackage"}, {"name": "enrollmentDate"}],
+            [{"name": "expectedCompletionDate"}, false],
+            [{"name": "totalBalance"}, {"name": "totalPaid"}],
+            [{"name": "outstandingBalance"}, false],
+            [{"name": "lastPaymentDate"}, {"name": "nextPaymentDueDate"}]
+        ]
+    },
+    {
+        "label": "Additional",
+        "rows": [
+            [{"name": "assignedUser"}, {"name": "teams"}],
+            [{"name": "notes", "fullWidth": true}]
+        ]
+    }
+]

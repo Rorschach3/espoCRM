@@ -1,0 +1,69 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-user-shield",
+    "additionalLayouts": {
+        "detailPortal": {
+            "type": "detail"
+        },
+        "listPortal": {
+            "type": "list"
+        },
+        "listForCrTradeline": {
+            "type": "listSmall"
+        },
+        "listForCrDisputeLetter": {
+            "type": "listSmall"
+        },
+        "listForCrPayment": {
+            "type": "listSmall"
+        }
+    },
+    "sidePanels": {
+        "detail": [
+            {
+                "name": "activities",
+                "reference": "activities"
+            },
+            {
+                "name": "history",
+                "reference": "history"
+            },
+            {
+                "name": "tasks",
+                "reference": "tasks"
+            }
+        ],
+        "detailPortal": [
+            {
+                "name": "stream",
+                "reference": "stream"
+            }
+        ]
+    },
+    "relationshipPanels": {
+        "tradelines": {
+            "layout": "listForCrClient",
+            "createDisabled": false,
+            "selectDisabled": true
+        },
+        "disputeLetters": {
+            "layout": "listForCrClient",
+            "createDisabled": false,
+            "selectDisabled": true
+        },
+        "payments": {
+            "layout": "listForCrClient",
+            "createDisabled": false,
+            "selectDisabled": true
+        }
+    },
+    "boolFilterList": ["onlyMy"],
+    "filterList": [
+        {"name": "active"},
+        {"name": "inactive", "style": "info"},
+        {"name": "completed", "style": "success"}
+    ],
+    "selectDefaultFilters": {
+        "filter": "active"
+    }
+}

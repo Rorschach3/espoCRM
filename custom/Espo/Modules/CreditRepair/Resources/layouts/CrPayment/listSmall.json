@@ -1,0 +1,6 @@
+[
+    {"name": "name", "link": true},
+    {"name": "amount", "width": 16},
+    {"name": "paymentDate", "width": 16},
+    {"name": "status", "width": 14}
+]

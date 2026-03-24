@@ -1,0 +1,5 @@
+[
+    {"name": "creditorName", "link": true},
+    {"name": "status", "width": 14},
+    {"name": "balance", "width": 14}
+]

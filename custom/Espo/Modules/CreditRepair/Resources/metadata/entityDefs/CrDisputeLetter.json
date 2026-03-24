@@ -1,0 +1,173 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "letterType": {
+            "type": "enum",
+            "options": [
+                "Initial Dispute",
+                "Follow-Up Dispute",
+                "Debt Validation",
+                "Method of Verification",
+                "Goodwill Deletion",
+                "Pay for Delete",
+                "Cease and Desist",
+                "Identity Theft",
+                "Other"
+            ],
+            "required": true,
+            "audited": true,
+            "displayAsLabel": true
+        },
+        "bureau": {
+            "type": "enum",
+            "options": ["", "Equifax", "Experian", "TransUnion", "All Bureaus", "Creditor/CA"],
+            "required": true,
+            "audited": true
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Draft", "Sent", "Responded", "In Review", "Resolved", "Closed"],
+            "default": "Draft",
+            "style": {
+                "Draft": "info",
+                "Sent": "primary",
+                "Responded": "warning",
+                "In Review": "warning",
+                "Resolved": "success",
+                "Closed": "success"
+            },
+            "audited": true,
+            "displayAsLabel": true,
+            "labelType": "state"
+        },
+        "sentDate": {
+            "type": "date",
+            "audited": true
+        },
+        "responseDeadline": {
+            "type": "date"
+        },
+        "responseDate": {
+            "type": "date",
+            "audited": true
+        },
+        "responseType": {
+            "type": "enum",
+            "options": [
+                "",
+                "Deleted",
+                "Updated",
+                "Verified",
+                "No Response",
+                "Needs Investigation",
+                "Insufficient"
+            ],
+            "audited": true
+        },
+        "content": {
+            "type": "text",
+            "preview": true,
+            "attachmentField": "attachments"
+        },
+        "notes": {
+            "type": "text",
+            "preview": true
+        },
+        "attachments": {
+            "type": "attachmentMultiple"
+        },
+        "crClient": {
+            "type": "link",
+            "required": true
+        },
+        "tradeline": {
+            "type": "link"
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "crClient": {
+            "type": "belongsTo",
+            "entity": "CrClient",
+            "foreign": "disputeLetters",
+            "deferredLoad": true
+        },
+        "tradeline": {
+            "type": "belongsTo",
+            "entity": "CrTradeline",
+            "foreign": "disputeLetters",
+            "deferredLoad": true
+        }
+    },
+    "collection": {
+        "orderBy": "sentDate",
+        "order": "desc",
+        "textFilterFields": ["name", "bureau", "notes"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "crClient": {
+            "columns": ["crClientId", "deleted"]
+        },
+        "sentDate": {
+            "columns": ["sentDate", "deleted"]
+        },
+        "createdAt": {
+            "columns": ["createdAt", "deleted"]
+        }
+    },
+    "optimisticConcurrencyControl": true
+}

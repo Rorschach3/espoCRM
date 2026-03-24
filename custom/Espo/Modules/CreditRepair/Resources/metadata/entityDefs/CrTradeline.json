@@ -1,0 +1,178 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "creditorName": {
+            "type": "varchar",
+            "maxLength": 255,
+            "required": true
+        },
+        "accountNumber": {
+            "type": "varchar",
+            "maxLength": 50
+        },
+        "accountType": {
+            "type": "enum",
+            "options": [
+                "",
+                "Credit Card",
+                "Auto Loan",
+                "Mortgage",
+                "Student Loan",
+                "Medical",
+                "Collection",
+                "Charge-Off",
+                "Personal Loan",
+                "Other"
+            ],
+            "audited": true
+        },
+        "bureau": {
+            "type": "multiEnum",
+            "options": ["Equifax", "Experian", "TransUnion"],
+            "displayAsLabel": true
+        },
+        "balance": {
+            "type": "currency",
+            "min": 0,
+            "audited": true
+        },
+        "balanceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "creditLimit": {
+            "type": "currency",
+            "min": 0
+        },
+        "creditLimitConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "openedDate": {
+            "type": "date"
+        },
+        "reportedDate": {
+            "type": "date"
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Open", "Closed", "In Dispute", "Removed", "Verified"],
+            "default": "Open",
+            "style": {
+                "Open": "primary",
+                "In Dispute": "warning",
+                "Removed": "success",
+                "Closed": "info",
+                "Verified": "danger"
+            },
+            "audited": true,
+            "displayAsLabel": true,
+            "labelType": "state"
+        },
+        "paymentStatus": {
+            "type": "enum",
+            "options": [
+                "",
+                "Current",
+                "30 Days Late",
+                "60 Days Late",
+                "90 Days Late",
+                "120+ Days Late",
+                "Charged Off",
+                "Collection"
+            ],
+            "audited": true
+        },
+        "remarks": {
+            "type": "text",
+            "preview": true
+        },
+        "crClient": {
+            "type": "link",
+            "required": true
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "crClient": {
+            "type": "belongsTo",
+            "entity": "CrClient",
+            "foreign": "tradelines",
+            "deferredLoad": true
+        },
+        "disputeLetters": {
+            "type": "hasMany",
+            "entity": "CrDisputeLetter",
+            "foreign": "tradeline",
+            "audited": true
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": ["name", "creditorName", "accountNumber"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "crClient": {
+            "columns": ["crClientId", "deleted"]
+        },
+        "createdAt": {
+            "columns": ["createdAt", "deleted"]
+        }
+    },
+    "optimisticConcurrencyControl": true
+}

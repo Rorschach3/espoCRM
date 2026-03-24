@@ -1,0 +1,6 @@
+[
+    {"name": "name", "link": true},
+    {"name": "bureau", "width": 18},
+    {"name": "status", "width": 14},
+    {"name": "sentDate", "width": 14}
+]

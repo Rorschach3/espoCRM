@@ -1,0 +1,226 @@
+{
+    "fields": {
+        "name": {
+            "type": "personName",
+            "required": true
+        },
+        "salutationName": {
+            "type": "enum",
+            "options": ["", "Mr.", "Ms.", "Mrs.", "Dr."]
+        },
+        "firstName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "required": true
+        },
+        "lastName": {
+            "type": "varchar",
+            "maxLength": 100,
+            "required": true
+        },
+        "emailAddress": {
+            "type": "email"
+        },
+        "phoneNumber": {
+            "type": "phone",
+            "typeList": ["Mobile", "Home", "Work", "Other"]
+        },
+        "dateOfBirth": {
+            "type": "date"
+        },
+        "ssnLast4": {
+            "type": "varchar",
+            "maxLength": 4,
+            "pattern": "^[0-9]{4}$"
+        },
+        "address": {
+            "type": "address"
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Active", "Inactive", "Completed", "On Hold"],
+            "default": "Active",
+            "style": {
+                "Active": "primary",
+                "Completed": "success",
+                "On Hold": "warning",
+                "Inactive": "info"
+            },
+            "audited": true,
+            "displayAsLabel": true,
+            "labelType": "state"
+        },
+        "enrollmentDate": {
+            "type": "date",
+            "audited": true
+        },
+        "expectedCompletionDate": {
+            "type": "date"
+        },
+        "creditScoreEquifax": {
+            "type": "int",
+            "min": 300,
+            "max": 850
+        },
+        "creditScoreExperian": {
+            "type": "int",
+            "min": 300,
+            "max": 850
+        },
+        "creditScoreTransUnion": {
+            "type": "int",
+            "min": 300,
+            "max": 850
+        },
+        "servicePackage": {
+            "type": "enum",
+            "options": ["", "Basic", "Standard", "Premium"],
+            "audited": true
+        },
+        "totalBalance": {
+            "type": "currency",
+            "min": 0,
+            "audited": true
+        },
+        "totalBalanceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "totalPaid": {
+            "type": "currency",
+            "min": 0,
+            "audited": true
+        },
+        "totalPaidConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "outstandingBalance": {
+            "type": "currency",
+            "min": 0,
+            "readOnly": true,
+            "audited": true
+        },
+        "outstandingBalanceConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "lastPaymentDate": {
+            "type": "date",
+            "readOnly": true
+        },
+        "nextPaymentDueDate": {
+            "type": "date"
+        },
+        "monthlyStatusSent": {
+            "type": "bool",
+            "default": false
+        },
+        "lastStatusUpdateDate": {
+            "type": "date",
+            "readOnly": true
+        },
+        "notes": {
+            "type": "text",
+            "preview": true
+        },
+        "portalUser": {
+            "type": "link",
+            "readOnly": true,
+            "directAccessDisabled": true,
+            "layoutDetailDisabled": true
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "portalUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "tradelines": {
+            "type": "hasMany",
+            "entity": "CrTradeline",
+            "foreign": "crClient",
+            "audited": true
+        },
+        "disputeLetters": {
+            "type": "hasMany",
+            "entity": "CrDisputeLetter",
+            "foreign": "crClient",
+            "audited": true
+        },
+        "payments": {
+            "type": "hasMany",
+            "entity": "CrPayment",
+            "foreign": "crClient",
+            "audited": true
+        }
+    },
+    "collection": {
+        "orderBy": "createdAt",
+        "order": "desc",
+        "textFilterFields": ["firstName", "lastName", "emailAddress", "phoneNumber"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "assignedUser": {
+            "columns": ["assignedUserId", "deleted"]
+        },
+        "createdAt": {
+            "columns": ["createdAt", "deleted"]
+        },
+        "name": {
+            "columns": ["firstName", "lastName", "deleted"]
+        }
+    },
+    "optimisticConcurrencyControl": true
+}

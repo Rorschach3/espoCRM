@@ -1,0 +1,67 @@
+{
+    "fields": {
+        "name": "Name",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "salutationName": "Salutation",
+        "emailAddress": "Email",
+        "phoneNumber": "Phone",
+        "dateOfBirth": "Date of Birth",
+        "ssnLast4": "SSN (Last 4)",
+        "address": "Address",
+        "status": "Status",
+        "enrollmentDate": "Enrollment Date",
+        "expectedCompletionDate": "Expected Completion Date",
+        "creditScoreEquifax": "Equifax Score",
+        "creditScoreExperian": "Experian Score",
+        "creditScoreTransUnion": "TransUnion Score",
+        "servicePackage": "Service Package",
+        "totalBalance": "Total Balance",
+        "totalPaid": "Total Paid",
+        "outstandingBalance": "Outstanding Balance",
+        "lastPaymentDate": "Last Payment Date",
+        "nextPaymentDueDate": "Next Payment Due",
+        "monthlyStatusSent": "Monthly Status Sent",
+        "lastStatusUpdateDate": "Last Status Update",
+        "notes": "Notes",
+        "portalUser": "Portal User",
+        "assignedUser": "Assigned To",
+        "teams": "Teams",
+        "tradelines": "Tradelines",
+        "disputeLetters": "Dispute Letters",
+        "payments": "Payments"
+    },
+    "links": {
+        "tradelines": "Tradelines",
+        "disputeLetters": "Dispute Letters",
+        "payments": "Payments",
+        "portalUser": "Portal User"
+    },
+    "options": {
+        "status": {
+            "Active": "Active",
+            "Inactive": "Inactive",
+            "Completed": "Completed",
+            "On Hold": "On Hold"
+        },
+        "servicePackage": {
+            "Basic": "Basic",
+            "Standard": "Standard",
+            "Premium": "Premium"
+        }
+    },
+    "labels": {
+        "Create CrClient": "Create CR Client",
+        "Client Information": "Client Information",
+        "Credit Scores": "Credit Scores",
+        "Service & Billing": "Service & Billing",
+        "My Credit Profile": "My Credit Profile",
+        "My Credit Scores": "My Credit Scores",
+        "My Account Balance": "My Account Balance"
+    },
+    "presetFilters": {
+        "active": "Active",
+        "inactive": "Inactive",
+        "completed": "Completed"
+    }
+}

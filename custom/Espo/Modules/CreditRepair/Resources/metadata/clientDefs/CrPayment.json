@@ -1,0 +1,14 @@
+{
+    "controller": "controllers/record",
+    "iconClass": "fas fa-dollar-sign",
+    "additionalLayouts": {
+        "listForCrClient": {
+            "type": "listSmall"
+        }
+    },
+    "filterList": [
+        {"name": "completed", "style": "success"},
+        {"name": "pending", "style": "warning"},
+        {"name": "failed", "style": "danger"}
+    ]
+}

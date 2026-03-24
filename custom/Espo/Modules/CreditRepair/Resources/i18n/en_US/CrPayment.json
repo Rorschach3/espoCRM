@@ -1,0 +1,46 @@
+{
+    "fields": {
+        "name": "Payment Reference",
+        "amount": "Amount",
+        "amountConverted": "Amount (Converted)",
+        "paymentDate": "Payment Date",
+        "paymentMethod": "Payment Method",
+        "status": "Status",
+        "transactionId": "Transaction ID",
+        "invoiceNumber": "Invoice Number",
+        "notes": "Notes",
+        "crClient": "Client",
+        "assignedUser": "Assigned To",
+        "teams": "Teams"
+    },
+    "links": {
+        "crClient": "Client"
+    },
+    "options": {
+        "paymentMethod": {
+            "Credit Card": "Credit Card",
+            "Debit Card": "Debit Card",
+            "Bank Transfer (ACH)": "Bank Transfer (ACH)",
+            "Check": "Check",
+            "Money Order": "Money Order",
+            "Cash": "Cash",
+            "Zelle": "Zelle",
+            "PayPal": "PayPal",
+            "Other": "Other"
+        },
+        "status": {
+            "Pending": "Pending",
+            "Completed": "Completed",
+            "Failed": "Failed",
+            "Refunded": "Refunded"
+        }
+    },
+    "labels": {
+        "Create CrPayment": "Record Payment"
+    },
+    "presetFilters": {
+        "completed": "Completed",
+        "pending": "Pending",
+        "failed": "Failed"
+    }
+}

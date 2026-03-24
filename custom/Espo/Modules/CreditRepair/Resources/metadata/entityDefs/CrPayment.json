@@ -1,0 +1,146 @@
+{
+    "fields": {
+        "name": {
+            "type": "varchar",
+            "required": true,
+            "pattern": "$noBadCharacters"
+        },
+        "amount": {
+            "type": "currency",
+            "required": true,
+            "min": 0,
+            "audited": true
+        },
+        "amountConverted": {
+            "type": "currencyConverted",
+            "readOnly": true
+        },
+        "paymentDate": {
+            "type": "date",
+            "required": true,
+            "audited": true
+        },
+        "paymentMethod": {
+            "type": "enum",
+            "options": [
+                "",
+                "Credit Card",
+                "Debit Card",
+                "Bank Transfer (ACH)",
+                "Check",
+                "Money Order",
+                "Cash",
+                "Zelle",
+                "PayPal",
+                "Other"
+            ],
+            "audited": true
+        },
+        "status": {
+            "type": "enum",
+            "options": ["Pending", "Completed", "Failed", "Refunded"],
+            "default": "Pending",
+            "style": {
+                "Completed": "success",
+                "Pending": "warning",
+                "Failed": "danger",
+                "Refunded": "info"
+            },
+            "audited": true,
+            "displayAsLabel": true,
+            "labelType": "state"
+        },
+        "transactionId": {
+            "type": "varchar",
+            "maxLength": 100
+        },
+        "invoiceNumber": {
+            "type": "varchar",
+            "maxLength": 50
+        },
+        "notes": {
+            "type": "text",
+            "preview": true
+        },
+        "crClient": {
+            "type": "link",
+            "required": true
+        },
+        "assignedUser": {
+            "type": "link",
+            "view": "views/fields/assigned-user"
+        },
+        "teams": {
+            "type": "linkMultiple",
+            "view": "views/fields/teams"
+        },
+        "createdAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "modifiedAt": {
+            "type": "datetime",
+            "readOnly": true,
+            "fieldManagerParamList": ["useNumericFormat"]
+        },
+        "createdBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        },
+        "modifiedBy": {
+            "type": "link",
+            "readOnly": true,
+            "view": "views/fields/user",
+            "fieldManagerParamList": []
+        }
+    },
+    "links": {
+        "createdBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "modifiedBy": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "assignedUser": {
+            "type": "belongsTo",
+            "entity": "User"
+        },
+        "teams": {
+            "type": "hasMany",
+            "entity": "Team",
+            "relationName": "entityTeam",
+            "layoutRelationshipsDisabled": true
+        },
+        "crClient": {
+            "type": "belongsTo",
+            "entity": "CrClient",
+            "foreign": "payments",
+            "deferredLoad": true
+        }
+    },
+    "collection": {
+        "orderBy": "paymentDate",
+        "order": "desc",
+        "textFilterFields": ["name", "transactionId", "invoiceNumber"]
+    },
+    "indexes": {
+        "status": {
+            "columns": ["status", "deleted"]
+        },
+        "crClient": {
+            "columns": ["crClientId", "deleted"]
+        },
+        "paymentDate": {
+            "columns": ["paymentDate", "deleted"]
+        },
+        "createdAt": {
+            "columns": ["createdAt", "deleted"]
+        }
+    },
+    "optimisticConcurrencyControl": true
+}
